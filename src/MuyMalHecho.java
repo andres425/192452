@@ -2,51 +2,52 @@ import java.util.Scanner;
 
 public class MuyMalHecho {
     public static void main(String[] args) throws Exception {
-        Scanner S = new Scanner(System.in);
-        int C = 0;
+        Scanner input = new Scanner(System.in);
+        int Contador = 0;
 
         System.out.println("Número de usuarios a ingresar:");
-        int N = S.nextInt();
-        S.nextLine();
+        byte NumeroUsuarios = input.nextByte();
+        input.nextLine();
 
-        int E1 = 0, E2 = 0, E3 = 0;
-        String N1 = "", N2 = "", N3 = "";
+        byte Edad1 = 0, Edad2 = 0, Edad3 = 0;
+        String Nombre1 = "", Nombre2 = "", Nombre3 = "";
 
-        while (C < N) {
+        while (Contador < NumeroUsuarios) {
             System.out.println("Nombre del usuario:");
-            String U = S.nextLine();
+            String NombreUsuario = input.nextLine();
 
             System.out.println("Edad del usuario:");
-            int A = S.nextInt();
-            S.nextLine();
+            byte EdadUsuario = input.nextByte();
+            input.nextLine();
 
-            if (C == 0) {
-                N1 = U;
-                E1 = A;
-            } else if (C == 1) {
-                N2 = U;
-                E2 = A;
-            } else if (C == 2) {
-                N3 = U;
-                E3 = A;
+            if (Contador == 0) {
+                Nombre1 = NombreUsuario;
+                Edad1 = EdadUsuario;
+            } else if (Contador == 1) {
+                Nombre2 = NombreUsuario;
+                Edad2 = EdadUsuario;
+            } else if (Contador == 2) {
+                Nombre3 = NombreUsuario;
+                Edad3 = EdadUsuario;
             }
 
-            if (A >= 18) {
-                System.out.println(U + " es mayor de edad.");
+            if (EdadUsuario >= 18) {
+                System.out.println(NombreUsuario + " es mayor de edad.");
             } else {
-                System.out.println(U + " es menor de edad.");
+                System.out.println(NombreUsuario+ " es menor de edad.");
             }
 
-            if (A > 120 || A < 1) {
+            if (EdadUsuario > 120 || EdadUsuario < 1) {
                 System.out.println("Edad no válida.");
             }
 
-            C = C + 1;
+            Contador = Contador + 1;
         }
 
         System.out.println("Resumen:");
-        System.out.println("Usuario 1: " + N1 + " - Edad: " + E1);
-        System.out.println("Usuario 2: " + N2 + " - Edad: " + E2);
-        System.out.println("Usuario 3: " + N3 + " - Edad: " + E3);
+        System.out.println("Usuario 1: " + Nombre1 + " - Edad: " + Edad1);
+        System.out.println("Usuario 2: " + Nombre2 + " - Edad: " + Edad2);
+        System.out.println("Usuario 3: " + Nombre3 + " - Edad: " + Edad3);
+        input.close();
     }
 }
